@@ -3,29 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judul ke Kiri</title>
     <style>
+        /* Mengatur latar belakang halaman menggunakan gambar */
         body {
-            background-image: url('https://i.imgur.com/FbLWkop.jpeg'); /* Ganti dengan URL gambar Anda */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             height: 100vh;
+            background-image: url('https://i.imgur.com/EkMnp17.jpeg'); /* Ganti dengan URL gambar latar belakang */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
         }
 
-        h1 {
-            font-size: 48px;
-            color: blue;
-            text-align: left; /* Mengatur judul agar sejajar ke kiri */
-            margin-left: 20px; /* Memberikan jarak dari kiri */
+        /* Gaya tombol dengan gambar sebagai latar belakang */
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-image: url('https://i.imgur.com/pgVIQts.jpeg/300'); /* Ganti dengan URL gambar tombol */
+            background-size: cover; /* Pastikan gambar menutupi tombol */
+            background-position: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px; /* Jarak dari bawah */
+        }
+
+        /* Efek hover pada tombol */
+        .button:hover {
+            opacity: 0.8; /* Menurunkan opasitas saat hover */
         }
     </style>
 </head>
 <body>
-    <h1>Judul Ini Sejajar Kiri</h1>
+    <!-- Tombol dengan gambar latar belakang -->
+    <a href="https://example.com" target="_blank">
+        <button class="button">Kunjungi Website</button>
+    </a>
 </body>
 </html>
