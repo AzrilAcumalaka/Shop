@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website dengan Latar Belakang Hitam</title>
+    <title>Text Bergerak ke Samping</title>
     <style>
         body {
-            background-color: black; /* Mengatur latar belakang menjadi hitam */
-            color: white; /* Mengatur warna teks menjadi putih agar kontras dengan latar belakang */
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scrolling-text {
+            font-size: 24px;
+            white-space: nowrap;
+            animation: scroll 10s linear infinite; /* Animasi bergerak terus menerus */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%); /* Mulai dari luar layar kanan */
+            }
+            100% {
+                transform: translateX(-100%); /* Bergerak hingga keluar layar kiri */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Selamat Datang di Website Saya!</h1>
-    <p>Ini adalah website dengan latar belakang hitam.</p>
+    <div class="scrolling-text">Ini adalah teks yang bergerak ke samping (dari kanan ke kiri).</div>
 </body>
 </html>
