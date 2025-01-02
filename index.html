@@ -3,38 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Bergerak ke Samping</title>
+    <title>Halaman dengan Latar Belakang Foto</title>
     <style>
         body {
-            background-color: black;
+            background-image: url('https://i.imgur.com/FbLWkop.jpeg'); /* Ganti dengan URL gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            padding: 0;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-
-        .scrolling-text {
-            font-size: 24px;
-            white-space: nowrap;
-            animation: scroll 10s linear infinite; /* Animasi bergerak terus menerus */
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%); /* Mulai dari luar layar kanan */
-            }
-            100% {
-                transform: translateX(-100%); /* Bergerak hingga keluar layar kiri */
-            }
+        h1 {
+            margin-top: 20%;
         }
     </style>
 </head>
 <body>
-    <div class="scrolling-text">Ini adalah teks yang bergerak ke samping (dari kanan ke kiri).</div>
+    <h1>Selamat Datang di Website Saya dengan Latar Belakang Foto!</h1>
 </body>
 </html>
