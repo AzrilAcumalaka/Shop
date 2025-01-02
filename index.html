@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman dengan Latar Belakang Foto</title>
+    <title>Judul Bergerak ke Samping</title>
     <style>
         body {
             background-image: url('https://i.imgur.com/FbLWkop.jpeg'); /* Ganti dengan URL gambar Anda */
@@ -16,12 +16,27 @@
             margin: 0;
             height: 100vh;
         }
+
         h1 {
-            margin-top: 20%;
+            font-size: 48px;
+            color: white;
+            animation: moveTitle 10s linear infinite; /* Animasi bergerak terus menerus */
+        }
+
+        @keyframes moveTitle {
+            0% {
+                transform: translateX(-100%); /* Mulai dari luar layar kiri */
+            }
+            50% {
+                transform: translateX(100%); /* Bergerak ke luar layar kanan */
+            }
+            100% {
+                transform: translateX(-100%); /* Kembali ke luar layar kiri */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Selamat Datang di Website Saya dengan Latar Belakang Foto!</h1>
+    <h1>Judul Ini Bergerak ke Samping</h1>
 </body>
 </html>
