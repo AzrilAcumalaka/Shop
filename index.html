@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judul Bergerak ke Samping</title>
+    <title>Judul ke Kiri</title>
     <style>
         body {
             background-image: url('https://i.imgur.com/FbLWkop.jpeg'); /* Ganti dengan URL gambar Anda */
@@ -12,31 +12,20 @@
             background-attachment: fixed;
             color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
+            padding: 0;
             height: 100vh;
         }
 
         h1 {
             font-size: 48px;
             color: white;
-            animation: moveTitle 10s linear infinite; /* Animasi bergerak terus menerus */
-        }
-
-        @keyframes moveTitle {
-            0% {
-                transform: translateX(-100%); /* Mulai dari luar layar kiri */
-            }
-            50% {
-                transform: translateX(100%); /* Bergerak ke luar layar kanan */
-            }
-            100% {
-                transform: translateX(-100%); /* Kembali ke luar layar kiri */
-            }
+            text-align: left; /* Mengatur judul agar sejajar ke kiri */
+            margin-left: 20px; /* Memberikan jarak dari kiri */
         }
     </style>
 </head>
 <body>
-    <h1>Judul Ini Bergerak ke Samping</h1>
+    <h1>Judul Ini Sejajar Kiri</h1>
 </body>
 </html>
