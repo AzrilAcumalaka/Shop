@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judul ke Kiri</title>
     <style>
+        /* Latar belakang halaman menggunakan gambar */
         body {
-            background-image: url('https://i.imgur.com/c1Fvzwh.jpeg'); /* Ganti dengan URL gambar Anda */
+            background-image: url('https://example.com/foto-latar.jpg'); /* Ganti dengan URL gambar latar belakang Anda */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -15,17 +16,81 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
+        /* Mengatur judul agar sejajar ke kiri */
         h1 {
             font-size: 48px;
             color: white;
             text-align: left; /* Mengatur judul agar sejajar ke kiri */
             margin-left: 20px; /* Memberikan jarak dari kiri */
         }
+
+        /* Tombol dengan latar belakang gambar */
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-image: url('https://via.placeholder.com/300'); /* Ganti dengan URL gambar tombol */
+            background-size: cover; /* Gambar akan menutupi tombol */
+            background-position: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Efek saat hover tombol */
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        /* Tombol Garis Tiga (Hamburger Menu) */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+        }
+
+        /* Setiap garis pada hamburger */
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* Efek hover pada hamburger menu */
+        .hamburger:hover div {
+            background-color: #4CAF50;
+        }
     </style>
 </head>
 <body>
-    <h1>MORO MATRKET</h1>
+    <!-- Tombol Garis Tiga (Hamburger Menu) -->
+    <div class="hamburger" onclick="window.location.href='https://example.com';">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Judul di halaman -->
+    <h1>Judul Ini Sejajar Kiri</h1>
+
+    <!-- Tombol utama di tengah -->
+    <a href="https://example.com" target="_blank">
+        <button class="button">Kunjungi Website</button>
+    </a>
 </body>
 </html>
