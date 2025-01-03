@@ -3,94 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judul ke Kiri</title>
+    <title>Website dengan Background Gambar dan Tombol Menu</title>
     <style>
-        /* Latar belakang halaman menggunakan gambar */
         body {
-            background-image: url('https://example.com/foto-latar.jpg'); /* Ganti dengan URL gambar latar belakang Anda */
+            background-image: url('https://i.imgur.com/dn7u5pO.jpeg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
         }
 
-        /* Mengatur judul agar sejajar ke kiri */
         h1 {
-            font-size: 48px;
-            color: white;
-            text-align: left; /* Mengatur judul agar sejajar ke kiri */
-            margin-left: 20px; /* Memberikan jarak dari kiri */
+            font-size: 3em;
         }
 
-        /* Tombol dengan latar belakang gambar */
-        .button {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-image: url('https://via.placeholder.com/300'); /* Ganti dengan URL gambar tombol */
-            background-size: cover; /* Gambar akan menutupi tombol */
-            background-position: center;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Efek saat hover tombol */
-        .button:hover {
-            opacity: 0.8;
-        }
-
-        /* Tombol Garis Tiga (Hamburger Menu) */
-        .hamburger {
+        /* Tombol di pojok kanan atas */
+        .menu-button {
             position: absolute;
             top: 20px;
             right: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 30px;
             cursor: pointer;
         }
 
-        /* Setiap garis pada hamburger */
-        .hamburger div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            border-radius: 5px;
+        .menu-button:focus {
+            outline: none;
         }
 
-        /* Efek hover pada hamburger menu */
-        .hamburger:hover div {
-            background-color: #4CAF50;
+        /* Dropdown menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #fff;
+            border-radius: 5px;
+            min-width: 200px;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .dropdown a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Menampilkan dropdown ketika menu dibuka */
+        .menu-button.active + .dropdown {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Tombol Garis Tiga (Hamburger Menu) -->
-    <div class="hamburger" onclick="window.location.href='https://example.com';">
-        <div></div>
-        <div></div>
-        <div></div>
+    <h1>Selamat Datang di Website Saya!</h1>
+
+    <!-- Tombol Menu -->
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <a href="#" class="home-link">
+            <img src="https://example.com/home-icon.png" alt="Home Icon"> Home
+        </a>
+        <a href="#" class="shop-link">
+            <img src="https://example.com/shop-icon.png" alt="Shop Icon"> Shop
+        </a>
     </div>
 
-    <!-- Judul di halaman -->
-    <h1>Judul Ini Sejajar Kiri</h1>
-
-    <!-- Tombol utama di tengah -->
-    <a href="https://example.com" target="_blank">
-        <button class="button">Kunjungi Website</button>
-    </a>
+    <script>
+        function toggleMenu() {
+            const button = document.querySelector('.menu-button');
+            button.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
