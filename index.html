@@ -16,13 +16,12 @@
             padding: 0;
             font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
             color: white;
-            background-color: red; /* Set background default menjadi merah */
             text-align: left; /* Menambahkan pengaturan align left untuk semua teks */
         }
 
         /* Kontainer untuk gambar latar belakang */
         .background-container {
-            background-image: url('https://i.imgur.com/ARzSOlW.jpeg');
+            background-image: url('https://example.com/your-image.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Agar gambar tetap saat scroll */
@@ -139,13 +138,6 @@
         .menu-btn.active + .dropdown {
             display: block;
         }
-
-        /* Konten bawah untuk warna merah */
-        .content-end {
-            background-color: red; /* Warna merah di bagian bawah */
-            width: 100%;
-            min-height: 200px; /* Tinggi konten bawah */
-        }
     </style>
 </head>
 <body>
@@ -154,7 +146,7 @@
         <!-- Video yang ada di tengah atas -->
         <div class="video-container">
             <video autoplay loop muted>
-                <source src="wallpaper.mp4" type="video/mp4">
+                <source src="video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -185,9 +177,6 @@
         <!-- Text 2 -->
         <div class="fade-in-text">Ini adalah teks kedua yang muncul dengan efek fade in!</div>
     </div>
-
-    <!-- Konten Bawah dengan Warna Merah setelah gambar habis -->
-    <div class="content-end"></div>
 
     <script>
         // Menambahkan event listener untuk tombol menu
