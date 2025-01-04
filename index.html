@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website dengan Background Gambar dan Tombol Menu</title>
+    <title>Website dengan Font Minecraft</title>
     <style>
+        /* Tambahkan font Minecraft dari file lokal */
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('fonts.ttf') format('truetype');
+        }
+
         body {
-            background-image: url('https://i.imgur.com/UpHMZfR.jpeg');
+            background-image: url('https://example.com/your-image.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -16,7 +22,7 @@
             justify-content: center;
             align-items: flex-start; /* Semua konten diatur rata kiri */
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
             padding-left: 20px; /* Tambahkan jarak dari kiri */
         }
 
@@ -24,13 +30,12 @@
             font-size: 3em;
         }
 
-        /* Menampilkan video di atas layar */
         .video-container {
             position: absolute;
             top: 10%;
-            left: 20px; /* Atur jarak video dari kiri */
-            width: 80%; /* Atur lebar video sesuai kebutuhan */
-            max-width: 800px; /* Maksimal lebar video */
+            left: 20px;
+            width: 80%;
+            max-width: 800px;
             margin-bottom: 20px;
         }
 
@@ -39,13 +44,13 @@
             border-radius: 10px;
         }
 
-        /* Animasi fading in untuk judul */
         .title {
             position: relative;
             font-size: 2em;
             font-weight: bold;
+            color: red; /* Warna merah untuk judul */
             opacity: 0;
-            text-align: left; /* Rata kiri */
+            text-align: left;
             animation: fadeIn 2s ease-in-out forwards;
         }
 
@@ -60,15 +65,14 @@
             }
         }
 
-        /* Efek teks fade in di bawah judul */
         .fade-in-text {
             font-size: 1.5em;
             font-weight: normal;
-            color: #ccc;
+            color: white; /* Warna putih untuk teks */
             opacity: 0;
-            text-align: left; /* Rata kiri */
+            text-align: left;
             animation: fadeInText 2s ease-in-out forwards;
-            animation-delay: 2s; /* Teks muncul setelah judul selesai */
+            animation-delay: 2s;
         }
 
         @keyframes fadeInText {
@@ -82,7 +86,6 @@
             }
         }
 
-        /* Tombol di pojok kanan atas */
         .menu-button {
             position: absolute;
             top: 20px;
@@ -98,7 +101,6 @@
             outline: none;
         }
 
-        /* Dropdown menu */
         .dropdown {
             display: none;
             position: absolute;
@@ -131,7 +133,6 @@
             margin-right: 10px;
         }
 
-        /* Menampilkan dropdown ketika menu dibuka */
         .menu-button.active + .dropdown {
             display: block;
         }
@@ -139,27 +140,22 @@
 </head>
 <body>
     <div class="video-container">
-        <!-- Menambahkan video yang tidak bisa dihentikan, tidak bisa dipause, dan mengulang terus -->
         <video autoplay loop muted>
-            <source src="wallpaper.mp4" type="video/mp4"> <!-- Gantilah dengan nama file video lokal -->
+            <source src="video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Judul di bawah video -->
     <div class="title">
         Selamat Datang di Website Saya!
     </div>
 
-    <!-- Teks Fade In di Bawah Judul -->
     <div class="fade-in-text">
         Kami menyediakan pengalaman terbaik untuk Anda!
     </div>
 
-    <!-- Tombol Menu -->
     <button class="menu-button" onclick="toggleMenu()">☰</button>
 
-    <!-- Dropdown Menu -->
     <div class="dropdown">
         <a href="https://example.com/home" class="home-link">
             <img src="https://example.com/home-icon-transparent.png" alt="Home Icon"> Home
