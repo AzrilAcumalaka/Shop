@@ -6,7 +6,7 @@
     <title>Website dengan Background Gambar dan Tombol Menu</title>
     <style>
         body {
-            background-image: url('https://i.imgur.com/bU8AJFB.jpeg');
+            background-image: url('https://example.com/your-image.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -37,6 +37,52 @@
         video {
             width: 100%;
             border-radius: 10px;
+        }
+
+        /* Animasi fading in untuk judul */
+        .title {
+            position: relative;
+            font-size: 2em;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efek teks ketik otomatis */
+        .typing-text {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #ccc;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+            animation: typing 4s steps(30, end), blink 0.7s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
         }
 
         /* Tombol di pojok kanan atas */
@@ -98,12 +144,20 @@
     <div class="video-container">
         <!-- Menambahkan video yang tidak bisa dihentikan, tidak bisa dipause, dan mengulang terus -->
         <video autoplay loop muted>
-            <source src="wallpaper.mp4" type="video/mp4"> <!-- Gantilah dengan nama file video lokal -->
+            <source src="video.mp4" type="video/mp4"> <!-- Gantilah dengan nama file video lokal -->
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <h1>Selamat Datang di Website Saya!</h1>
+    <!-- Judul di bawah video -->
+    <div class="title">
+        Selamat Datang di Website Saya!
+    </div>
+
+    <!-- Teks Ketik Otomatis -->
+    <div class="typing-text">
+        Kami menyediakan pengalaman terbaik untuk Anda!
+    </div>
 
     <!-- Tombol Menu -->
     <button class="menu-button" onclick="toggleMenu()">☰</button>
