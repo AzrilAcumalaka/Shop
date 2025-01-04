@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Website dengan Font Minecraft</title>
     <style>
-        /* Tambahkan font Minecraft dari file lokal */
+        /* Menambahkan font Minecraft dari file lokal */
         @font-face {
             font-family: 'Minecraft';
-            src: url('fonts.ttf') format('truetype');
+            src: url('fonts/minecraft.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
         }
 
         body {
-            background-image: url('https://i.imgur.com/4mGw0Po.jpeg');
+            background-image: url('https://example.com/your-image.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -20,59 +20,46 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* Semua konten diatur rata kiri */
+            align-items: flex-start;
             color: white;
             font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
-            padding-left: 20px; /* Tambahkan jarak dari kiri */
+            padding-left: 20px;
         }
 
         h1 {
             font-size: 3em;
         }
 
-        .video-container {
-            position: absolute;
-            top: 10%;
-            left: 20px;
-            width: 80%;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-
+        /* Title 1 */
         .title {
-            position: relative;
             font-size: 2em;
             font-weight: bold;
-            color: red; /* Warna merah untuk judul */
-            opacity: 0;
-            text-align: left;
-            animation: fadeIn 2s ease-in-out forwards;
+            color: red;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Text 1 */
+        .text1 {
+            font-size: 1.5em;
+            color: white;
+            margin-top: 10px;
         }
 
+        /* Title 2 */
+        .second-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: blue; /* Ganti warna sesuai keinginan */
+            margin-top: 20px; /* Jarak antara title pertama dan kedua */
+        }
+
+        /* Text 2 dengan efek fade-in */
         .fade-in-text {
             font-size: 1.5em;
-            font-weight: normal;
-            color: white; /* Warna putih untuk teks */
+            color: white;
             opacity: 0;
-            text-align: left;
             animation: fadeInText 2s ease-in-out forwards;
             animation-delay: 2s;
+            margin-top: 10px; /* Jarak antara title kedua dan text kedua */
         }
 
         @keyframes fadeInText {
@@ -85,91 +72,19 @@
                 transform: translateY(0);
             }
         }
-
-        .menu-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        .menu-button:focus {
-            outline: none;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 40px;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid #fff;
-            border-radius: 5px;
-            min-width: 200px;
-            padding: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .dropdown a {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .dropdown a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .dropdown a img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .menu-button.active + .dropdown {
-            display: block;
-        }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <!-- Title 1 -->
+    <div class="title">Ini adalah Title Pertama</div>
 
-    <div class="title">
-        Selamat Datang di Website Saya!
-    </div>
+    <!-- Text 1 -->
+    <div class="text1">Ini adalah teks pertama yang muncul di bawah Title 1</div>
 
-    <div class="fade-in-text">
-        Kami menyediakan pengalaman terbaik untuk Anda!
-    </div>
+    <!-- Title 2 -->
+    <div class="second-title">Ini adalah Title Kedua</div>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-
-    <div class="dropdown">
-        <a href="https://example.com/home" class="home-link">
-            <img src="https://example.com/home-icon-transparent.png" alt="Home Icon"> Home
-        </a>
-        <a href="https://example.com/shop" class="shop-link">
-            <img src="https://example.com/shop-icon-transparent.png" alt="Shop Icon"> Shop
-        </a>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            const button = document.querySelector('.menu-button');
-            button.classList.toggle('active');
-        }
-    </script>
+    <!-- Text 2 -->
+    <div class="fade-in-text">Ini adalah teks kedua yang muncul dengan efek fade in!</div>
 </body>
 </html>
