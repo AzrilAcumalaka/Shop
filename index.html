@@ -8,11 +8,11 @@
         /* Menambahkan font Minecraft dari file lokal */
         @font-face {
             font-family: 'Minecraft';
-            src: url('fonts.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
+            src: url('fonts/minecraft.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
         }
 
         body {
-            background-image: url('https://i.imgur.com/4mGw0Po.jpeg');
+            background-image: url('https://example.com/your-image.jpg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -30,11 +30,12 @@
         /* Video Styling */
         .video-container {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            z-index: -1;
+            top: 20px; /* Memberikan sedikit jarak dari atas */
+            left: 50%; /* Memposisikan video di tengah secara horizontal */
+            transform: translateX(-50%); /* Mengoreksi posisi tengah agar sempurna */
+            width: 300px; /* Lebar video kecil */
+            height: 150px; /* Tinggi video kecil */
+            z-index: -1; /* Memastikan video tetap di belakang konten */
         }
 
         video {
@@ -49,7 +50,7 @@
             font-size: 2em;
             font-weight: bold;
             color: red;
-            margin-top: 60%;
+            margin-top: 20%; /* Memberi jarak dari video */
         }
 
         /* Text 1 */
@@ -141,7 +142,7 @@
     </style>
 </head>
 <body>
-    <!-- Video yang ada di atas -->
+    <!-- Video yang ada di tengah atas -->
     <div class="video-container">
         <video autoplay loop muted>
             <source src="wallpaper.mp4" type="video/mp4">
