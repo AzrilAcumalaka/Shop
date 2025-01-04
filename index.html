@@ -8,26 +8,40 @@
         /* Menambahkan font Minecraft dari file lokal */
         @font-face {
             font-family: 'Minecraft';
-            src: url('fonts/minecraft.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
+            src: url('fonts.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
         }
 
         body {
-            background-image: url('https://example.com/your-image.jpg');
+            background-image: url('https://i.imgur.com/4mGw0Po.jpeg');
             background-size: cover;
             background-position: center;
             height: 100vh;
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: flex-start;
             color: white;
             font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
             padding-left: 20px;
+            position: relative;
         }
 
-        h1 {
-            font-size: 3em;
+        /* Video Styling */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            z-index: -1;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
         /* Title 1 */
@@ -35,6 +49,7 @@
             font-size: 2em;
             font-weight: bold;
             color: red;
+            margin-top: 60%;
         }
 
         /* Text 1 */
@@ -48,8 +63,8 @@
         .second-title {
             font-size: 1.8em;
             font-weight: bold;
-            color: blue; /* Ganti warna sesuai keinginan */
-            margin-top: 20px; /* Jarak antara title pertama dan kedua */
+            color: blue;
+            margin-top: 20px;
         }
 
         /* Text 2 dengan efek fade-in */
@@ -59,7 +74,7 @@
             opacity: 0;
             animation: fadeInText 2s ease-in-out forwards;
             animation-delay: 2s;
-            margin-top: 10px; /* Jarak antara title kedua dan text kedua */
+            margin-top: 10px;
         }
 
         @keyframes fadeInText {
@@ -72,9 +87,82 @@
                 transform: translateY(0);
             }
         }
+
+        /* Tombol di pojok kanan atas */
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-btn div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #444;
+        }
+
+        /* Show the dropdown when the button is clicked */
+        .menu-btn.active + .dropdown {
+            display: block;
+        }
     </style>
 </head>
 <body>
+    <!-- Video yang ada di atas -->
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="wallpaper.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Tombol Menu -->
+    <button class="menu-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <!-- Ganti href sesuai dengan URL tujuan -->
+        <a href="home.html">Home</a>
+        <a href="shop.html">Shop</a>
+    </div>
+
     <!-- Title 1 -->
     <div class="title">Ini adalah Title Pertama</div>
 
@@ -86,5 +174,15 @@
 
     <!-- Text 2 -->
     <div class="fade-in-text">Ini adalah teks kedua yang muncul dengan efek fade in!</div>
+
+    <script>
+        // Menambahkan event listener untuk tombol menu
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdown = document.querySelector('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
