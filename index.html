@@ -14,21 +14,21 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Semua konten diatur rata kiri */
             color: white;
             font-family: Arial, sans-serif;
+            padding-left: 20px; /* Tambahkan jarak dari kiri */
         }
 
         h1 {
             font-size: 3em;
         }
 
-        /* Menampilkan video di atas tengah layar */
+        /* Menampilkan video di atas layar */
         .video-container {
             position: absolute;
             top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 20px; /* Atur jarak video dari kiri */
             width: 80%; /* Atur lebar video sesuai kebutuhan */
             max-width: 800px; /* Maksimal lebar video */
             margin-bottom: 20px;
@@ -45,6 +45,7 @@
             font-size: 2em;
             font-weight: bold;
             opacity: 0;
+            text-align: left; /* Rata kiri */
             animation: fadeIn 2s ease-in-out forwards;
         }
 
@@ -59,29 +60,25 @@
             }
         }
 
-        /* Efek teks ketik otomatis dari kiri */
-        .typing-text {
+        /* Efek teks fade in di bawah judul */
+        .fade-in-text {
             font-size: 1.5em;
             font-weight: normal;
             color: #ccc;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0; /* Awalnya tidak terlihat */
-            animation: typing 4s steps(30, end), blink 0.7s step-end infinite;
+            opacity: 0;
+            text-align: left; /* Rata kiri */
+            animation: fadeInText 2s ease-in-out forwards;
+            animation-delay: 2s; /* Teks muncul setelah judul selesai */
         }
 
-        @keyframes typing {
+        @keyframes fadeInText {
             from {
-                width: 0;
+                opacity: 0;
+                transform: translateY(10px);
             }
             to {
-                width: 100%; /* Memunculkan seluruh teks */
-            }
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -154,8 +151,8 @@
         Selamat Datang di Website Saya!
     </div>
 
-    <!-- Teks Ketik Otomatis -->
-    <div class="typing-text">
+    <!-- Teks Fade In di Bawah Judul -->
+    <div class="fade-in-text">
         Kami menyediakan pengalaman terbaik untuk Anda!
     </div>
 
