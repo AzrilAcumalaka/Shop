@@ -1,36 +1,194 @@
-
-<!DOCTYPE html><html dir="ltr" lang="id-ID" class="theme light classic"><head><base href="/"><meta charset="utf-8"><title>MORO COMUNITY</title><meta name="app-name" content="export_website"/><meta name="viewport" content="width=device-width, initial-scale=1"><link href="a0684b0780c739e9.vendor.ltr.css" rel="stylesheet" integrity="sha512-JwMCpiHdk95MoUTatfaZJwstzeDnWfvWMJiwnSxZfPmgeCe4yvQDQ+ONMQjIy/Ht72r0TmlE+gvZnYRnpdLdVg==" crossorigin="anonymous"><link href="a6687d781a2ab30f.ltr.css" rel="stylesheet" integrity="sha512-Z01mGQgZmDNI/6hop03CGbJMaNcwPrwo2FvhAy4a1X/Xq9Gp8o1px5ijw+i5E7ZnkMTlSMen+KjphpnXHIxd0Q==" crossorigin="anonymous"><link href="static_font_4.ltr.css" rel="stylesheet"><link href="fb7db97d01189038.strings.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-/WszPlUEces5XINXqE13CCfITKIxgq6REmxPtrUG8p0gasRPyVsPQEophV7lrA5gReNuoVfMGEwLwTGTv8RaWg==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><link href="c5644d14ff2e75de.id-ID.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-6C6fQMNhmitcX1lVIu0OzxFgpJgvSstTAKfBoRyyJBLa2FodZZ6pI9FARiphiwbtNensyajcMSmZLuWfXnTXSQ==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><link href="a7c1af5ff687c6d1.runtime.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-xbk93Ub66oB1ShOyORtSHtP068oe3MxTslSQQVzSv5b5wnzO1wTXV6bMM7BEeTDaF3O0nrc4YiXDMQhVdeJDDg==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><link href="45caf03d8dd32c14.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-F/k0PCaQx4o2cgqgP+LcT5FSxTPYd/QsNhfLgLxoId5ZQC6QAC+RnHXmlUgnEP0GALodm69bVv8sHM/Z6yVBhQ==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><link href="031f31d6d60d1a1e.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-puvQVa9YUpu5kFyLR3r+qb1bSbxapCEUxjIShUXXrFTbTIVCFpI1p3Euho/KseN2aKecqUevbbjbFS0n2KZtiw==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><link href="ea9087aeda19ec42.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-R0pAVRaWwIIxey4g4xNv4P1PSX7MbVXIr2DO+lJ49ujzLjiyC6pJDcI07vsvaUFIBh7VjeLxng8peofNZGbRuA==" nonce="af45203f-28d0-4bc5-925c-772caf9c9d62"><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:title" content="MORO COMUNITY"><meta property="og:type" content="website"><link rel="shortcut icon" href="images/2d0b56e7e51cf11036ad8734bdb67e2d.png"><link rel="icon" href="images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192"><link rel="apple-touch-icon" href="images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180"><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">
-  const lang = navigator.language ? navigator.language : 'en';
-  window.canva_installFooter = (container) => {
-    if (!(container instanceof HTMLDivElement)) {
-      return;
-    }
-    fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.text().then(footerStr => {
-        const div = document.createElement('div');
-        div.innerHTML = footerStr;
-        for (const child of [...div.children]) {
-          if (child.tagName.toLowerCase() !== 'script') {
-            container.append(child);
-          }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORO COMMUNITY</title>
+    <style>
+        /* Menambahkan font Minecraft dari file lokal */
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('fonts.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
         }
-  
-        (() => { !function(e){"use strict";const t=document.getElementById("modal_backdrop"),n=document.getElementById("modal"),o=document.getElementById("captcha-form"),c=document.getElementById("report_button"),d=document.getElementById("form_report"),s=document.getElementById("form_cancel"),l=document.getElementById("form_submit_reason"),a=document.getElementById("form_go_back"),r=document.getElementById("form_submit_captcha"),m=document.getElementById("form_close"),i=document.getElementById("form_close_initial"),u=document.getElementById("report_reason_0"),p=document.getElementById("error_message"),_=document.getElementById("error_message_captcha"),y=new Map;y.set(0,document.getElementById("form_step_terms")),y.set(1,document.getElementById("form_step_report_reason")),y.set(4,document.getElementById("form_step_report_other"));const E=document.getElementById("form_step_report_ip");E&&y.set(5,E),y.set(2,document.getElementById("form_step_captcha")),y.set(3,document.getElementById("form_step_success"));const f=document.getElementById("report_reason_4"),g=document.getElementById("form_close_ip"),h=document.getElementById("form_go_back_ip"),I=document.getElementById("report_reason_other"),k=document.getElementById("form_close_other"),w=document.getElementById("form_go_back_other");function v(){t.classList.remove("active"),n.classList.remove("active"),c.classList.remove("active"),c.focus()}function B(e){y.forEach(((t,n)=>{n===e?(t.style.display="block",L(t)):t.style.display="none"}))}let b,C=!1;const T="NETEASE"===window.C_CAPTCHA_IMPLEMENTATION?()=>b:()=>{const e=o.elements.namedItem("g-recaptcha-response");return null==e?void 0:e.value};t.onclick=v,s.onclick=v,m.onclick=v,i.onclick=v,g&&(g.onclick=v),k.onclick=v,c.onclick=function(){y.forEach(((e,t)=>{e.style.display=0===t?"block":"none"})),t.classList.add("active"),n.classList.add("active"),c.classList.add("active"),u.checked=!0,setTimeout((()=>{L(y.get(0))}),350)},d.onclick=d.dataset.reportUrl?function(){const{origin:e,pathname:t}=window.location,n=e+t,o=d.dataset.reportUrl+encodeURIComponent(n);window.open(o)}:()=>B(1),l.onclick=()=>{null!=E&&f.checked?B(5):I.checked?B(4):(B(2),function(){if(C)return;const e=document.createElement("script");e.src="NETEASE"===window.C_CAPTCHA_IMPLEMENTATION?"https://cstaticdun.126.net/load.min.js":"https://www.google.com/recaptcha/api.js",e.async=!0,e.defer=!0,document.head.appendChild(e),C=!0,e.onload="NETEASE"===window.C_CAPTCHA_IMPLEMENTATION?()=>{var e;null===(e=window.initNECaptcha)||void 0===e||e.call(window,{captchaId:window.C_CAPTCHA_KEY,element:"#netease-captcha",protocol:"https",width:"auto",onVerify:(e,t)=>{b=t.validate}})}:()=>{}}())},a.onclick=()=>B(1),h&&(h.onclick=()=>B(1)),w.onclick=()=>B(1),o.addEventListener("submit",(function(e){e.preventDefault(),p.style.display="none",_.style.display="none";const t=function(){let e="";const t=document.getElementsByName("report_reason");for(let n=0;n<t.length;n++){const o=t[n];o.checked&&(e=o.value)}return e}(),n=T();if(!n)return void(_.style.display="block");const o={reason:t,challenge:n},c=window.location.origin+window.location.pathname+"/_api/report";r.classList.add("loading"),fetch(c,{method:"POST",body:JSON.stringify(o),headers:{"Content-Type":"application/json; charset=utf-8"}}).then((e=>{r.classList.remove("loading"),e.ok?B(3):p.style.display="block"}))}));const A=new Map,L=e=>{const t=A.get(e);null!=t&&document.removeEventListener("keydown",t);const n=e.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),o=e,c=n[n.length-1],d=function(e){("Tab"===e.key||9===e.keyCode)&&(e.shiftKey?document.activeElement===o&&(c.focus(),e.preventDefault()):document.activeElement===c&&(o.focus(),e.preventDefault()))};A.set(e,d),document.addEventListener("keydown",d),o.focus()};e.keepFocus=L,Object.defineProperty(e,"__esModule",{value:!0})}({}); })();
-      });
-    });
-  }
-</script><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">
-    window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
-</script><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">
-    window.C_CAPTCHA_KEY = '6Ldk59waAAAAAMPqkICbJjfMivZLCGtTpa6Wn6zO';
-</script></head><body><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script><div id="root"></div><script nonce="af45203f-28d0-4bc5-925c-772caf9c9d62">(function() {window['__canva_public_path__'] = ''; window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"b1a1ad0376548dff45a10900274987d36162ad28","K":1736848303,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"g":false,"i":false,"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"}},"b":{"A?":"H","C":{"a":"ANDROID"},"D":{"a":"ANDROID","c":"id-ID"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"A","A":"TAEXfxtKgiU","B":1},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"id-ID","D":"MORO COMUNITY","E":"","F":[],"G":{},"Y":{},"V":[],"W":[],"A":[{"A?":"i","a":"PB06SmwF9W126lty","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAEvfjdIStk","B":1,"C":1},"D":{"A":true,"C":"#ffffff","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"I","A":5.6843418860808015E-14,"B":1.1368683772161603E-13,"D":1365.3333333333333,"C":786.0467903323288,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"B":{"A":{"A":"MAGcFaBCRjc","B":1},"B":{"A":5.6843418860808015E-14,"B":-16.041591406514385,"D":1397.416516146362,"C":786.0467903323286,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"H","A":176.02109756387995,"B":866.5051085563641,"D":177.54697082667167,"C":25.617039062124263,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":177.54697082667167,"a":25.617039062124263,"y":{},"c":[{"A?":"I","A":-4.973799150320701E-14,"B":-4.973799150320701E-14,"D":25.61703906212425,"C":25.61703906212425,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"illustration","P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAB0QaOUxuU","B":2},"B":{"A":0.0,"B":0.0,"D":25.61703906212425,"C":25.61703906212425,"E":0.0},"E":0.0,"C":{"#010101":"#ffffff"}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"I","A":0.056113995845450404,"B":81.91234123099875,"D":12.056819778750263,"C":25.50481107043325,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"illustration","P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAAjdEIhwWU","B":3},"B":{"A":-3.552713678800501E-15,"B":-2.6645352591003757E-15,"D":12.056819778750269,"C":25.504811070433256,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"I","A":1.4490754376019517,"B":150.2644631786236,"D":27.282507648048053,"C":22.71888818692002,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAEeJXDe4q0","B":1},"B":{"A":0.0,"B":0.0,"D":27.282507648048053,"C":22.71888818692002,"E":0.0},"E":0.0,"C":{"#000000":"#ffffff"}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]}],"d":[]},{"A?":"H","A":29.808764431780446,"B":35.84100519635547,"D":226.99560071561973,"C":159.0208526631616,"E":0.0,"F":0.0,"X":{"A?":"B","A":8},"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":1624.0180396556984,"a":1137.6992884101949,"y":{},"c":[{"A?":"I","A":0.0,"B":402.4784793607955,"D":948.2733600376014,"C":1012.7191223702538,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":true,"B":{"A":{"A":"MAGacSFmWPc","B":1},"I":{"A":"MAGacVvklq8","B":1},"B":{"A":0.0,"B":0.0,"D":948.2733600376014,"C":1012.7191223702538,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"K","A":788.2734962142838,"B":348.40356191393124,"D":947.8390762198898,"C":295.1350356579764,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"MORO \\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"color":{"B":"#ffffff"},"font-family":{"B":"YAFShf6np94,0"},"font-size":{"B":"343.381"}}},{"A?":"B","A":5},{"A?":"A","A":{"text-transform":{"B":"none"},"spacing":{"B":"0.0"},"tracking":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-transform":{},"tracking":{},"leading":{},"text-align":{},"color":{},"spacing":{},"font-family":{},"font-size":{}}}]},"b":{"A":[6]},"j":{"A":[{"A":"lift","B":{"intensity":"1"}}],"B":[]},"d":"A","e":1320.984375,"f":411.3238,"l":false},{"A?":"K","A":1029.1177753343252,"B":-1.1368683772161603E-13,"D":1624.0180396556987,"C":108.58151307586962,"E":0.0,"F":0.0,"Q":false,"S":false,"2":{"A":"","B":false},"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"komunitas \\n"}],"B":[{"A?":"A","A":{"font-size":{"B":"65.8698"},"font-family":{"B":"YAECFrdUJw8,1"},"color":{"B":"#ffffff"},"tracking":{"B":"-21.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"center"}}},{"A?":"B","A":10},{"A?":"A","A":{"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-size":{},"font-family":{},"color":{},"tracking":{},"text-transform":{},"text-align":{},"spacing":{},"leading":{}}}]},"b":{"A":[]},"j":{"A":[{"A":"lift","B":{"intensity":"1"}}],"B":[]},"d":"A","e":1178.9751987078434,"f":78.82604,"l":false,"h":"A"}],"d":[]},{"A?":"I","A":248.28227631110167,"B":955.2785939696998,"D":614.4,"C":614.4,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"B":{"A":{"A":"MAFIVt7_vlY","B":1},"B":{"A":0.0,"B":0.0,"D":614.4,"C":614.4,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]}],"I":[]},{"A?":"i","a":"PBhlD7BwN6nXh431","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":1494.0,"C":"D"},"G":{"A":"EAFUhtF1r4Y","B":2,"C":1},"D":{"I":{"A":"VAFGWxITitg","B":{"A":-2.2737367544323206E-13,"B":-1266.1228070175441,"D":3898.2456140350882,"C":2222.0000000000005,"E":0.0},"C":0.0,"J":{},"F":"B","I":true,"G":1.0},"C":"#ffffff","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"H","A":1045.6249994985274,"B":76.80000000000001,"D":761.9329571294704,"C":244.78996286496465,"E":0.0,"F":0.0,"X":{"A?":"B","A":8},"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":761.9329571294704,"a":244.78996286496465,"y":{},"c":[{"A?":"K","A":0.0,"B":2.8421709430404007E-13,"D":761.9329571294704,"C":178.0,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"title","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Digital Consulting\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1200.0"},"font-size":{"B":"74.6667"},"font-family":{"B":"YAFdJmu7CPY,0"},"font-weight":{"B":"bold"},"color":{"B":"#ffffff"}}},{"A?":"B","A":18},{"A?":"A","A":{"tracking":{"B":"-40.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-weight":{},"font-size":{},"font-family":{},"leading":{},"color":{},"tracking":{}}}]},"b":{"A":[]},"d":"C","l":false,"g":true,"h":"A"},{"A?":"K","A":203.72330286496467,"B":2.8421709430404007E-13,"D":331.562022465891,"C":41.06666,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"subtitle","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"March 2025\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YAEnS2G4JLg,0"},"font-size":{"B":"34.6667"}}},{"A?":"B","A":10},{"A?":"A","A":{"font-style":{"B":"normal"},"leading":{"B":"1400.0"},"tracking":{"B":"0.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-size":{},"spacing":{},"leading":{},"font-style":{},"tracking":{},"color":{},"font-family":{}}}]},"b":{"A":[]},"d":"A","l":false,"g":true,"h":"A"}],"d":[]},{"A?":"H","A":803.8000000000001,"B":76.79999999999998,"D":400.53734403816696,"C":87.59196084035544,"E":0.0,"F":0.0,"X":{"A?":"B","A":8},"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":1328.9295166788752,"a":290.61845023228716,"y":{},"c":[{"A?":"I","A":0.0,"B":0.0,"D":290.61845023228716,"C":290.61845023228716,"E":0.0,"F":0.0,"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":false,"B":{"A":{"A":"MAEkLb3Yd9M","B":1},"B":{"A":-2.8421709430404007E-14,"B":-2.8421709430404007E-14,"D":290.6184502322872,"C":290.6184502322872,"E":0.0},"E":0.0,"C":{"#1a1a1a":"#d73cbe"}},"D":0.0,"F":false,"J":false,"G":false,"H":false},"e":[]},{"A?":"K","A":112.91762118230653,"B":112.76642378539981,"D":65.08560266148754,"C":63.92394424279974,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"title","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"H\\n"}],"B":[{"A?":"A","A":{"font-weight":{"B":"bold"},"font-size":{"B":"16.3329"},"font-family":{"B":"YAFdJmu7CPY,0"},"text-align":{"B":"center"},"leading":{"B":"1000.0"},"color":{"B":"#ffffff"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-size":{},"leading":{},"text-align":{},"tracking":{},"color":{},"font-weight":{},"font-family":{}}}]},"b":{"A":[]},"d":"A","e":19.616702088388546,"f":19.26658,"l":false,"g":true,"h":"A"},{"A?":"K","A":113.36921727231072,"B":376.0100835611814,"D":952.9194331176938,"C":72.10832510854596,"E":0.0,"F":0.0,"Q":false,"S":false,"N":"pretitle","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Harpers Inc.\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1000.0"},"font-size":{"B":"18.6667"},"font-family":{"B":"YAFdJmu7CPY,0"},"font-weight":{"B":"bold"},"color":{"B":"#ffffff"}}},{"A?":"B","A":12},{"A?":"A","A":{"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-weight":{},"font-size":{},"font-family":{},"leading":{},"color":{},"tracking":{}}}]},"b":{"A":[]},"d":"A","e":287.20847421402146,"f":21.73334,"l":false,"g":true,"h":"A"}],"d":[]}],"I":[]}],"I":[]},"P":{"A?":"A","U":false,"V":false},"Z":{"A?":"A","e":false,"f":false,"g":{}},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"BOLD_ITALICS","files":[{"url":"fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232},{"url":"fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028},{"url":"fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"ITALICS","files":[{"url":"fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132},{"url":"fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632},{"url":"fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}},{"style":"REGULAR","files":[{"url":"fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188},{"url":"fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180},{"url":"fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516},{"url":"fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064}],"subsettedFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}}],"E":false},{"A":"YAFShf6np94","B":0,"C":"Potta One","D":[{"style":"REGULAR","files":[{"url":"fonts/ed81c53d7a65d89f259d16dc0afd9969.woff2","format":"WOFF2","unicodeRanges":[],"
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
+            color: white;
+            text-align: left; /* Menambahkan pengaturan align left untuk semua teks */
+            background-image: url('https://i.imgur.com/ARzSOlW.jpeg'); /* Gambar latar belakang */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Agar gambar tetap saat scroll */
+            height: 100vh; /* Memastikan gambar mengisi seluruh layar */
+            width: 100%; /* Memastikan lebar gambar memenuhi layar */
+        }
+
+        /* Efek fade-in untuk semua teks */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInText 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Video Styling */
+        .video-container {
+            position: absolute;
+            top: 20px; /* Memberikan sedikit jarak dari atas */
+            left: 50%; /* Memposisikan video di tengah secara horizontal */
+            transform: translateX(-50%); /* Mengoreksi posisi tengah agar sempurna */
+            width: 300px; /* Lebar video kecil */
+            height: 150px; /* Tinggi video kecil */
+            z-index: -1; /* Memastikan video tetap di belakang konten */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Title 1 dan Title 2 */
+        .title, .second-title {
+            font-size: 2em; /* Ukuran font yang sama untuk Title 1 dan Title 2 */
+            font-weight: bold;
+            color: red;
+            margin-top: 200px; /* Memberi jarak dari video */
+        }
+
+        /* Text 1 */
+        .text1 {
+            font-size: 1.5em;
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* Title 2 */
+        .second-title {
+            color: red;
+            margin-top: 20px;
+        }
+
+        /* Text 2 dengan efek fade-in */
+        .fade-in-text {
+            font-size: 1.5em;
+            color: white;
+            opacity: 0;
+            animation: fadeInText 3s ease-in-out forwards;
+            animation-delay: 2s;
+            margin-top: 10px;
+        }
+
+        /* Tombol di pojok kanan atas */
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-btn div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #444;
+        }
+
+        /* Show the dropdown when the button is clicked */
+        .menu-btn.active + .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Kontainer untuk background gambar -->
+    <div class="background-container">
+        <!-- Video yang ada di tengah atas -->
+        <div class="video-container">
+            <video autoplay loop muted>
+                <source src="wallpaper.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Tombol Menu -->
+        <button class="menu-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <!-- Ganti href sesuai dengan URL tujuan -->
+            <a href="home.html">Home</a>
+            <a href="shop.html">Shop</a>
+        </div>
+
+        <!-- Title 1 -->
+        <div class="title fade-in">About Us</div>
+
+        <!-- Text 1 -->
+        <div class="text1 fade-in">Moro adalah komunitas game yang dinamis, menyenangkan dan inklusif, mempertemukan pemain dari berbagai latar belakang untuk berbagi pengalaman dan keseruan dalam bermain di komunitas Moro</div>
+
+        <!-- Title 2 -->
+        <div class="second-title fade-in">Divisi</div>
+
+        <!-- Text 2 -->
+        <div class="fade-in-text fade-in">Belum Di Tulis</div>
+    </div>
+
+    <script>
+        // Menambahkan event listener untuk tombol menu
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdown = document.querySelector('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
