@@ -1,194 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MORO COMMUNITY</title>
-    <style>
-        /* Menambahkan font Minecraft dari file lokal */
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('fonts.ttf') format('truetype'); /* Mengarah ke file font di folder fonts */
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Minecraft', Arial, sans-serif; /* Gunakan font Minecraft */
-            color: white;
-            text-align: left; /* Menambahkan pengaturan align left untuk semua teks */
-            background-image: url('https://i.imgur.com/ARzSOlW.jpeg'); /* Gambar latar belakang */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Agar gambar tetap saat scroll */
-            height: 100vh; /* Memastikan gambar mengisi seluruh layar */
-            width: 100%; /* Memastikan lebar gambar memenuhi layar */
-        }
-
-        /* Efek fade-in untuk semua teks */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInText 3s ease-in-out forwards;
-        }
-
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Video Styling */
-        .video-container {
-            position: absolute;
-            top: 20px; /* Memberikan sedikit jarak dari atas */
-            left: 50%; /* Memposisikan video di tengah secara horizontal */
-            transform: translateX(-50%); /* Mengoreksi posisi tengah agar sempurna */
-            width: 300px; /* Lebar video kecil */
-            height: 150px; /* Tinggi video kecil */
-            z-index: -1; /* Memastikan video tetap di belakang konten */
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        /* Title 1 dan Title 2 */
-        .title, .second-title {
-            font-size: 2em; /* Ukuran font yang sama untuk Title 1 dan Title 2 */
-            font-weight: bold;
-            color: red;
-            margin-top: 200px; /* Memberi jarak dari video */
-        }
-
-        /* Text 1 */
-        .text1 {
-            font-size: 1.5em;
-            color: white;
-            margin-top: 10px;
-        }
-
-        /* Title 2 */
-        .second-title {
-            color: red;
-            margin-top: 20px;
-        }
-
-        /* Text 2 dengan efek fade-in */
-        .fade-in-text {
-            font-size: 1.5em;
-            color: white;
-            opacity: 0;
-            animation: fadeInText 3s ease-in-out forwards;
-            animation-delay: 2s;
-            margin-top: 10px;
-        }
-
-        /* Tombol di pojok kanan atas */
-        .menu-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: transparent;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 1.5em;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .menu-btn div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            border-radius: 5px;
-        }
-
-        /* Dropdown menu */
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 40px;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 10;
-        }
-
-        .dropdown a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-        }
-
-        .dropdown a:hover {
-            background-color: #444;
-        }
-
-        /* Show the dropdown when the button is clicked */
-        .menu-btn.active + .dropdown {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft UUID Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <!-- Kontainer untuk background gambar -->
-    <div class="background-container">
-        <!-- Video yang ada di tengah atas -->
-        <div class="video-container">
-            <video autoplay loop muted>
-                <source src="wallpaper.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+  <h1>Minecraft UUID Converter</h1>
+  <p>Masukkan nama Minecraft untuk mendapatkan UUID.</p>
+  <input type="text" id="username" placeholder="Masukkan nama Minecraft">
+  <button onclick="convertUUID()">Konversi</button>
+  <div class="result" id="result"></div>
 
-        <!-- Tombol Menu -->
-        <button class="menu-btn">
-            <div></div>
-            <div></div>
-            <div></div>
-        </button>
+  <script>
+    async function convertUUID() {
+      const username = document.getElementById('username').value.trim();
+      const resultDiv = document.getElementById('result');
+      
+      if (!username) {
+        resultDiv.textContent = "Masukkan nama Minecraft!";
+        return;
+      }
 
-        <!-- Dropdown Menu -->
-        <div class="dropdown">
-            <!-- Ganti href sesuai dengan URL tujuan -->
-            <a href="home.html">Home</a>
-            <a href="shop.html">Shop</a>
-        </div>
+      resultDiv.textContent = "Memproses...";
 
-        <!-- Title 1 -->
-        <div class="title fade-in">About Us</div>
+      try {
+        // Fetch UUID for Java Edition
+        const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
+        if (!response.ok) {
+          resultDiv.textContent = "Nama tidak ditemukan!";
+          return;
+        }
 
-        <!-- Text 1 -->
-        <div class="text1 fade-in">Moro adalah komunitas game yang dinamis, menyenangkan dan inklusif, mempertemukan pemain dari berbagai latar belakang untuk berbagi pengalaman dan keseruan dalam bermain di komunitas Moro</div>
+        const data = await response.json();
+        const javaUUID = data.id;
 
-        <!-- Title 2 -->
-        <div class="second-title fade-in">Divisi</div>
+        // Simulate Floodgate Bedrock UUID
+        const floodgateUUID = `00000000-0000-0000-0009-${javaUUID.slice(-12)}`;
 
-        <!-- Text 2 -->
-        <div class="fade-in-text fade-in">Belum Di Tulis</div>
-    </div>
-
-    <script>
-        // Menambahkan event listener untuk tombol menu
-        const menuBtn = document.querySelector('.menu-btn');
-        const dropdown = document.querySelector('.dropdown');
-
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-        });
-    </script>
+        resultDiv.innerHTML = `
+          <p><strong>UUID Java:</strong> ${javaUUID}</p>
+          <p><strong>UUID Floodgate Bedrock:</strong> ${floodgateUUID}</p>
+        `;
+      } catch (error) {
+        resultDiv.textContent = "Terjadi kesalahan: " + error.message;
+      }
+    }
+  </script>
 </body>
 </html>
