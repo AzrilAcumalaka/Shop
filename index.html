@@ -19,20 +19,30 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    .avatar {
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    .uuid-result {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
-  <h1>Minecraft UUID Converter</h1>
+  <h1>Minecraft Profile UUID Converter</h1>
   <p>Masukkan nama Minecraft untuk mendapatkan UUID.</p>
   <input type="text" id="username" placeholder="Masukkan nama Minecraft">
-  <button onclick="convertUUID()">Konversi</button>
+  <button onclick="fetchProfile()">Cari Profil</button>
+
   <div class="result" id="result"></div>
 
   <script>
-    async function convertUUID() {
+    async function fetchProfile() {
       const username = document.getElementById('username').value.trim();
       const resultDiv = document.getElementById('result');
-      
       if (!username) {
         resultDiv.textContent = "Masukkan nama Minecraft!";
         return;
@@ -41,7 +51,7 @@
       resultDiv.textContent = "Memproses...";
 
       try {
-        // Fetch UUID for Java Edition
+        // Mendapatkan UUID Java
         const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
         if (!response.ok) {
           resultDiv.textContent = "Nama tidak ditemukan!";
@@ -50,13 +60,21 @@
 
         const data = await response.json();
         const javaUUID = data.id;
+        
+        // Avatar Java
+        const avatarURL = `https://crafatar.com/avatars/${javaUUID}?size=128`;
 
-        // Simulate Floodgate Bedrock UUID
+        // Simulasikan UUID Floodgate Bedrock
         const floodgateUUID = `00000000-0000-0000-0009-${javaUUID.slice(-12)}`;
 
+        // Menampilkan Hasil
         resultDiv.innerHTML = `
-          <p><strong>UUID Java:</strong> ${javaUUID}</p>
-          <p><strong>UUID Floodgate Bedrock:</strong> ${floodgateUUID}</p>
+          <div class="uuid-result">
+            <img src="${avatarURL}" alt="Avatar" class="avatar">
+            <p><strong>Nama:</strong> ${username}</p>
+            <p><strong>UUID Java:</strong> ${javaUUID}</p>
+            <p><strong>UUID Floodgate (Bedrock):</strong> ${floodgateUUID}</p>
+          </div>
         `;
       } catch (error) {
         resultDiv.textContent = "Terjadi kesalahan: " + error.message;
