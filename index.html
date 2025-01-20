@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Gamertag to Floodgate UUID</title>
+    <title>Input dan Kirim ke API</title>
+    <script>
+        function submitInput() {
+            const input = document.getElementById('xuidInput').value;
+            const apiUrl = `https://api.geysermc.org/v2/xbox/xuid/${input}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('result').textContent = 'Error: ' + error.message;
+                });
+        }
+    </script>
 </head>
 <body>
-    <h1>Floodgate UUID Generator</h1>
-    <form id="gamertagForm">
-        <label for="gamertag">Enter Minecraft Gamertag:</label>
-        <input type="text" id="gamertag" name="gamertag" required>
-        <button type="submit">Generate UUID</button>
-    </form>
-    <p id="result"></p>
+    <h1>Masukkan XUID</h1>
+    <input type="text" id="xuidInput" placeholder="Masukkan XUID" />
+    <button onclick="submitInput()">Kirim</button>
 
-    <script src="script.js"></script>
+    <h2>Hasil:</h2>
+    <pre id="result"></pre>
 </body>
 </html>
