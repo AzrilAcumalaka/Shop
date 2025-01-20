@@ -7,7 +7,10 @@
     <script>
         function submitInput() {
             const input = document.getElementById('xuidInput').value;
-            const apiUrl = `https://api.geysermc.org/v2/xbox/xuid/${input}`;
+            const baseXUID = '00000000-0000-0000-0009-';
+            const fullXUID = baseXUID + input; // Gabungkan dengan baseXUID
+
+            const apiUrl = `https://api.geysermc.org/v2/xbox/xuid/${fullXUID}`;
 
             fetch(apiUrl)
                 .then(response => response.json())
