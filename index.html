@@ -1,85 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minecraft UUID Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    input, button {
-      margin: 10px;
-      padding: 10px;
-      font-size: 16px;
-    }
-    .result {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    .avatar {
-      border-radius: 50%;
-      margin-top: 20px;
-    }
-    .uuid-result {
-      margin-top: 15px;
-      padding: 10px;
-      background-color: #f1f1f1;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Gamertag to Floodgate UUID</title>
 </head>
 <body>
-  <h1>Minecraft Profile UUID Converter</h1>
-  <p>Masukkan nama Minecraft untuk mendapatkan UUID.</p>
-  <input type="text" id="username" placeholder="Masukkan nama Minecraft">
-  <button onclick="fetchProfile()">Cari Profil</button>
+    <h1>Floodgate UUID Generator</h1>
+    <form id="gamertagForm">
+        <label for="gamertag">Enter Minecraft Gamertag:</label>
+        <input type="text" id="gamertag" name="gamertag" required>
+        <button type="submit">Generate UUID</button>
+    </form>
+    <p id="result"></p>
 
-  <div class="result" id="result"></div>
-
-  <script>
-    async function fetchProfile() {
-      const username = document.getElementById('username').value.trim();
-      const resultDiv = document.getElementById('result');
-      if (!username) {
-        resultDiv.textContent = "Masukkan nama Minecraft!";
-        return;
-      }
-
-      resultDiv.textContent = "Memproses...";
-
-      try {
-        // Mendapatkan UUID Java
-        const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
-        if (!response.ok) {
-          resultDiv.textContent = "Nama tidak ditemukan!";
-          return;
-        }
-
-        const data = await response.json();
-        const javaUUID = data.id;
-        
-        // Avatar Java
-        const avatarURL = `https://crafatar.com/avatars/${javaUUID}?size=128`;
-
-        // Simulasikan UUID Floodgate Bedrock
-        const floodgateUUID = `00000000-0000-0000-0009-${javaUUID.slice(-12)}`;
-
-        // Menampilkan Hasil
-        resultDiv.innerHTML = `
-          <div class="uuid-result">
-            <img src="${avatarURL}" alt="Avatar" class="avatar">
-            <p><strong>Nama:</strong> ${username}</p>
-            <p><strong>UUID Java:</strong> ${javaUUID}</p>
-            <p><strong>UUID Floodgate (Bedrock):</strong> ${floodgateUUID}</p>
-          </div>
-        `;
-      } catch (error) {
-        resultDiv.textContent = "Terjadi kesalahan: " + error.message;
-      }
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
