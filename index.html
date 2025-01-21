@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamertag to Floodgate UUID Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gamertag to Floodgate UUID Converter</h1>
+    <input type="text" id="gamertag" placeholder="Enter Gamertag" />
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+        async function convert() {
+            const gamertag = document.getElementById("gamertag").value;
+            const apiKey = "ae8f411f-c614-440d-8964-a3c34b12ad92"; // Ganti dengan API key Anda
+            const resultDiv = document.getElementById("result");
+
+            if (!gamertag) {
+                resultDiv.textContent = "Please enter a gamertag.";
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://mcprofile.io/api/v1/floodgate/${gamertag}`, {
+                    headers: { "Authorization": `Bearer ${apiKey}` }
+                });
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                const data = await response.json();
+                resultDiv.textContent = `Floodgate UUID: ${data.floodgateId}`;
+            } catch (error) {
+                resultDiv.textContent = `Failed to convert: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>
