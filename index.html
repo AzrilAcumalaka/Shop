@@ -3,41 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamertag to Floodgate UUID</title>
+  <title>Xbox UUID to Floodgate UUID Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Convert Gamertag to Floodgate UUID</h1>
-  <form id="gamertagForm">
-    <label for="gamertag">Enter Gamertag:</label>
-    <input type="text" id="gamertag" name="gamertag" required>
+  <h1>Convert Xbox UUID to Floodgate UUID</h1>
+  <form id="convertForm">
+    <label for="xboxUUID">Enter Xbox UUID:</label><br>
+    <input type="text" id="xboxUUID" placeholder="e.g., 12345678-1234-5678-1234-567812345678" required>
+    <br>
     <button type="submit">Convert</button>
   </form>
+  <h2>Result</h2>
   <p id="result"></p>
 
   <script>
-    document.getElementById("gamertagForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
+    document.getElementById('convertForm').addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent form from reloading the page
 
-      const gamertag = document.getElementById("gamertag").value;
-      const resultElement = document.getElementById("result");
+      const xboxUUID = document.getElementById('xboxUUID').value.trim();
+      const resultElement = document.getElementById('result');
 
-      try {
-        // Fetch data from mcprofile.io
-        const response = await fetch(`https://mcprofile.io/minecraft/${gamertag}`);
-        if (!response.ok) throw new Error("Gamertag not found");
-
-        const data = await response.json();
-
-        // Check for Floodgate UUID
-        const uuid = data.uuid;
-        if (uuid.startsWith("00000000")) {
-          resultElement.textContent = `Floodgate UUID: ${uuid}`;
-        } else {
-          resultElement.textContent = `UUID (Not Floodgate): ${uuid}`;
-        }
-      } catch (error) {
-        resultElement.textContent = `Error: ${error.message}`;
+      // Validate input
+      if (!xboxUUID || xboxUUID.length < 32) {
+        resultElement.textContent = 'Invalid Xbox UUID. Please enter a valid UUID.';
+        return;
       }
+
+      // Convert to Floodgate UUID
+      const cleanXboxUUID = xboxUUID.replace(/-/g, '');
+      const floodgateUUID = `00000000-0000-0000-${cleanXboxUUID.substring(0, 4)}-${cleanXboxUUID.substring(4)}`;
+
+      // Display result
+      resultElement.textContent = `Floodgate UUID: ${floodgateUUID}`;
     });
   </script>
 </body>
